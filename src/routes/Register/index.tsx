@@ -14,9 +14,12 @@ const Register = () => {
   const history = useHistory();
 
   const onFinish = (values: string) => {
-    console.log('Success:', values);
     history.push('./login');
   };
+
+  const onHandleToLogin = () => {
+    history.push('./login')
+  }
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
@@ -92,6 +95,9 @@ const Register = () => {
         <Form.Item {...tailLayout}>
           <Button type="primary" htmlType="submit">
             Register
+          </Button>{' '}
+          <Button type="link" onClick={onHandleToLogin}>
+            Back to Login
           </Button>
         </Form.Item>
       </Form>

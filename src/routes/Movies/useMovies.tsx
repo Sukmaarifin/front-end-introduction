@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { List, Space, Spin, Typography, Avatar } from 'antd';
+import { useState, useEffect } from 'react';
 import { getMovies, getGendres } from '../../models/movies';
 
 export type CustomMoviesType = {
@@ -57,7 +56,10 @@ const useMovies = () => {
       setLoading(true)
       const res = await getGendres();
       if(res.status === 200){
-        const tempMovies = res.data.genres.reduce((a: any, b: GendersType)=> (a[b.id]=b.name, a),{});
+        const tempMovies = res.data.genres.reduce(
+          (a: any, b: GendersType) =>
+          (a[b.id] = b.name, a),
+          {})
         setGendres(tempMovies)
       }
     } catch (e) {
