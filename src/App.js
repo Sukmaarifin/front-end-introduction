@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { Switch, Router, Route, Redirect } from "react-router";
+import { Switch, Router, Route } from "react-router";
 import LoginPage from './routes/Login';
 import RegisterPage from './routes/Register';
 import MoviesPage from './routes/Movies';
@@ -19,6 +19,11 @@ function App() {
         <Layout>
           <Switch>
             <Route
+              exact
+              path="/"
+              component={LoginPage}
+            />
+             <Route
               exact
               path="/login"
               component={LoginPage}

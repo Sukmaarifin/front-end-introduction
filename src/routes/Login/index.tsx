@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Input, Button, Typography  } from 'antd';
+import AppContext from '../../core/AppContext';
 
 const layout = {
   labelCol: { span: 9 },
@@ -12,10 +13,16 @@ const tailLayout = {
 };
 
 const Login = () => {
+  const { ContextAuth } = AppContext;
+  const { loginAuth } = useContext(ContextAuth);
+
   const history = useHistory();
 
-  const onHandleToSubmit = (values: string) => {
-    console.log('Success:', values);
+  const onHandleToSubmit = (values: object) => {
+    loginAuth({
+      ...values,
+      isLogin: true
+    })
     history.push('./movies');
   };
 

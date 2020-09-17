@@ -1,0 +1,10 @@
+.header {
+  padding: 20px 75px 0px 20px;
+  display: flex;
+  float: right;
+
+  &-user {
+    font-size: 25px;
+    margin-right: 16px;
+  }
+}
