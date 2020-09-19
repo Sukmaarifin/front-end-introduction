@@ -56,10 +56,7 @@ const useMovies = () => {
       setLoading(true)
       const res = await getGendres();
       if(res.status === 200){
-        const tempMovies = res.data.genres.reduce(
-          (a: any, b: GendersType) =>
-          (a[b.id] = b.name, a),
-          {})
+        const tempMovies = res.data.genres.reduce((a: any, b: GendersType) => (a[b.id] = b.name, a),{})
         setGendres(tempMovies)
       }
     } catch (e) {

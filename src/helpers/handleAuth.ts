@@ -1,9 +1,9 @@
 
 export const handleLogout = () => {
-    localStorage.setItem('authData', null);
+    localStorage.removeItem('authData');
 }
 
-export const handleLogin = (data) => {
+export const handleLogin = (data: any) => {
     localStorage.setItem('authData', JSON.stringify(data));
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
@@ -7,7 +8,7 @@ import AppContext from '../../core/AppContext';
 import { checkAuthData } from '../../helpers/handleAuth';
 
 type PropsTypes = {
-  route: any,
+  route?: any,
 }
 
 const Layout = (props: PropsTypes) => {

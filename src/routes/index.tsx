@@ -1,9 +1,10 @@
 import Layout from '../components/Layout';
+import { RouteConfig } from 'react-router-config';
 import Login from './Login';
 import Register from './Register';
 import Movies from './Movies';
 
-export default [
+const routes : RouteConfig[] = [
   {
     component: Layout,
     routes: [
@@ -28,3 +29,5 @@ export default [
     ]
   }
 ];
+
+export default routes;
